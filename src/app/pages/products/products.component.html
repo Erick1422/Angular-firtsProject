@@ -1,1 +1,4 @@
-<p>products works!</p>
+<section class="products">
+    <!-- Pasar datos de un componente padre a un component hijo -->
+    <app-product [product]="product" *ngFor="let product of products"></app-product>
+</section>

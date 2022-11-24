@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { tap } from 'rxjs';
 import { ProductsService } from './services/products.service';
+import { Product } from './interfaces/product.interface';
 
 @Component({
   selector: 'app-products',
@@ -9,12 +10,15 @@ import { ProductsService } from './services/products.service';
 })
 export class ProductsComponent implements OnInit {
 
+  // el signo !, se usa para que no envíe error de inicialización
+  products!: Product[];
+
   constructor(private productService: ProductsService) { }
 
   ngOnInit(): void {
     this.productService.getProducts()
       .pipe(
-        tap(res => console.log(res))
+        tap((products: Product[]) => this.products = products)
       )
       .subscribe();
   }

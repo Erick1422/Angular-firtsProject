@@ -13,10 +13,8 @@ export class ProductsService {
   private apiURL = 'http://localhost:3002/products';
   constructor(private http: HttpClient) { }
 
-  // El Observable es una forma de decirle que una async func pero en Angular con rxjs
-  getProducts(): Observable<any> {
-    return this.http.get<Product>(this.apiURL);
+  // El Observable es una forma de decirle que es una async func pero en Angular con rxjs
+  getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.apiURL);
   }
-
-  // VIdeo 01:16:40
 }
