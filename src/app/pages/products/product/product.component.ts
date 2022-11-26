@@ -1,5 +1,5 @@
 // Esto se usa como componente hijo
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from '../interfaces/product.interface';
 
 @Component({
@@ -10,12 +10,16 @@ import { Product } from '../interfaces/product.interface';
 export class ProductComponent implements OnInit {
   // Este decorador permite traer la data del componente padre
   @Input() product!: Product;
+  // También se puede enviar data del componente hijo al padre
+  @Output() addToCartClick = new EventEmitter<Product>(); // Es un evento personalizado
+
   constructor() { }
 
-  // También se puede enviar data del componente hijo al padre
-  
-
   ngOnInit(): void {
+  }
+
+  onClick(): void {
+    this.addToCartClick.emit(this.product);
   }
 
 }
