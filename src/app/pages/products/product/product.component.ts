@@ -21,5 +21,7 @@ export class ProductComponent implements OnInit {
   onClick(): void {
     this.addToCartClick.emit(this.product);
   }
+  
+  // Vídeo: 1:49:50
 
 }
