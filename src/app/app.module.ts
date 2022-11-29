@@ -9,11 +9,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { MyComponent } from './pages/myComponents/myComponent.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CartComponent } from './shared/components/cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    MyComponent
+    MyComponent,
+    CartComponent
   ],
   // Se pueden importar los módulos de Angular o los nuestros para usarlos globalmente
   imports: [

@@ -6,6 +6,7 @@ import { MyComponent } from './pages/myComponents/myComponent.component';
 const routes: Routes = [
   { path: 'myComponent', component: MyComponent },
   { path: 'products', loadChildren: () => import('./pages/products/products.module').then(m => m.ProductsModule) },
+  { path: 'checkout', loadChildren: () => import('./pages/checkout/checkout.module').then(m => m.CheckoutModule) },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
